@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link class="font" href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  </head>
+
+  <style>
+
+    #body{
+      height: 100vh;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+    }
+    #screen{
+      width: 100%;
+      height: 100%;
+      background-color: green;
+      position: relative;
+    }
+
+    #scan{
+      z-index: 2;
+    }
+    #scan,
+    
+    #bezel{
+
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    #content{
+
+      font-family: VT323;
+      padding: 80px;
+      padding-left: 90px;
+      color: rgb(158, 245, 28);
+      font-size: 40px;
+      text-shadow: 1px 1px 1px rgb(104, 245, 61), 0 0 1em rgb(18, 247, 48), 0 0 0.2em rgb(9, 13, 241);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      
+    }
+
+    .container{
+
+      display: flex;      
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      
+      
+
+
+    }
+
+    #auto-type-text{
+
+      width: 50px;
+      font-size: 80px;
+      font-family: Brother;
+      position: relative;
+      
+    }
+
+    #youtube{
+
+      background-color: red;
+      
+    }
+
+    .shift-right{
+      
+      text-indent: 30px;
+    }
+
+    #climber{
+      position: absolute;
+      top: 10px;
+      left: 140px;
+      right: 0px;
+      
+      z-index: 0;
+      animation: descend 3s ease-in-out forwards;
+
+      color: green;
+
+      filter: drop-shadow(1px 1px 1px rgb(104, 245, 61))
+              drop-shadow(0 0 1em rgb(18, 247, 48))
+              drop-shadow(0 0 0.2em rgb(45, 207, 94));
+      
+    }
+
+    @keyframes descend{
+
+      0%{top: 10px;}
+
+      100% {
+        top: 65px;
+      }
+    }
+
+    .transparent-button{
+
+      position: absolute;
+            padding-left: 15px;
+            padding-right: 15px;
+            bottom: 60%;
+            left: 49.5%;
+            font-size: 30px;
+            font-family: Faktor;
+            color: rgb(158, 245, 28);
+            border: 5px;
+            background: transparent;
+            text-decoration: none;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+    }
+        .transparent-button::before,
+        .transparent-button::after,
+        .transparent-button span::before,
+        .transparent-button span::after {
+            content: '';
+            position: absolute;
+            border: 4px solid #ffffff; 
+        }
+        .transparent-button::before {
+            top: -10px;
+            left: -10px;
+            width: 10px;
+            height: 10px;
+            border-right: none;
+            border-bottom: none;
+            
+        }
+        .transparent-button::after {
+            bottom: -10px;
+            right: -10px;
+            width: 10px;
+            height: 10px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .transparent-button span::before {
+            top: -10px;
+            right: -10px;
+            width: 10px;
+            height: 10px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .transparent-button span::after {
+            bottom: -10px;
+            left: -10px;
+            width: 10px;
+            height: 10px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .transparent-button-2{
+
+position: absolute;
+      padding-left: 15px;
+      padding-right: 15px;
+      bottom: 60%;
+      left: 49.5%;
+      font-size: 30px;
+      font-family: Faktor;
+      color: rgb(158, 245, 28);
+      border: 5px;
+      background: transparent;
+      text-decoration: none;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+}
+  .transparent-button::before,
+  .transparent-button::after,
+  .transparent-button span::before,
+  .transparent-button span::after {
+      content: '';
+      position: absolute;
+      border: 4px solid #ffffff; 
+  }
+  .transparent-button::before {
+      top: -10px;
+      left: -10px;
+      width: 10px;
+      height: 10px;
+      border-right: none;
+      border-bottom: none;
+      
+  }
+  .transparent-button::after {
+      bottom: -10px;
+      right: -10px;
+      width: 10px;
+      height: 10px;
+      border-left: none;
+      border-top: none;
+  }
+
+  .transparent-button span::before {
+      top: -10px;
+      right: -10px;
+      width: 10px;
+      height: 10px;
+      border-left: none;
+      border-bottom: none;
+  }
+
+  .transparent-button span::after {
+      bottom: -10px;
+      left: -10px;
+      width: 10px;
+      height: 10px;
+      border-right: none;
+      border-top: none;
+  }
+
+    
+  </style>
+    
+  <body id="body">
+      <div id="screen">
+          <img src="scanlines.png" alt="" id="scan">
+          <img src="bezel.png" alt="" id="bezel">
+
+            <div id="content" class="container">
+              <div id="auto-type-text">
+                
+                <span class="auto-type"></span> <span class="shift-right"></span>
+                <img src="grun-mid-small.png" alt="" id="climber">
+              
+              </div> 
+              
+              
+               
+               
+            </div>
+
+            
+
+
+
+
+            <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+            <script>
+
+              var typed1 = new Typed(".auto-type",{
+                strings : ["Vertigo\nRush "],
+                
+                typeSpeed : 80,
+                backSpeed : 150,
+                smartBackspace: false,
+                
+                
+              });
+                
+            </script>
+
+            <div>
+              <div>
+                <a href="#" class="transparent-button"><span>Youtube</span></a>
+              </div>
+
+              <div>
+                <a href="#" class="transparent-button-2"><span>Youtube</span></a>
+              </div>
+            </div>
+
+            
+      </div>
+      
+  </body>
+  
+</html>
